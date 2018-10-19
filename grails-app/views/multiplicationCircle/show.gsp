@@ -3,45 +3,46 @@
 <head>
     <title>Multiplication Circle</title>
     <style>
-        circle, line {
-            fill: white;
-            stroke: #FF0000C0;
-            stroke-width: 3px;
-        }
-        label {
-            display: block;
-            float: left;
-            width: 5em;
-        }
+    circle, line {
+        fill: white;
+        stroke: #FF0000C0;
+        stroke-width: 3px;
+    }
+
+    label {
+        display: block;
+        float: left;
+        width: 5em;
+    }
     </style>
     <script language="JavaScript">
         function increase(valueName) {
             var input = document.getElementById(valueName);
-            input.value = parseInt(input.value) + 1 ;
+            input.value = parseInt(input.value) + 1;
         }
 
         // TODO: add a function to decrease the value
 
     </script>
 </head>
+
 <body>
-    <form action="/multiplicationCircle/index">
-      <tmpl:up_down_input name="segmentCount" label="Segments" value="${circleInstance.segmentCount}" />
+<form action="/multiplicationCircle/index">
+    <tmpl:up_down_input name="segmentCount" label="Segments" value="${circleInstance.segmentCount}"/>
 
-      <!-- TODO: add an input for the table base -->
+    <!-- TODO: add an input for the table base -->
 
-    </form>
-    <svg width="400" height="400">
-        <circle r="198" cx="200" cy="200"/>
-        <g:each var="line" in="${circleInstance.lines}">
-            <line
+</form>
+<svg width="400" height="400">
+    <circle r="198" cx="200" cy="200"/>
+    <g:each var="line" in="${circleInstance.lines}">
+        <line
                 x1="${line.x1}"
                 y1="${line.y1}"
                 x2="${line.x2}"
-                y2="${line.y2}"
-                />
-        </g:each>
-    </svg>
+                y2="${line.y2}"/>
+    </g:each>
+</svg>
 
 </body>
 </html>
