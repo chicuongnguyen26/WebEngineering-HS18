@@ -30,6 +30,6 @@ class MultiplicationCircleSpec extends GebSpec {
         $("form").segmentCount == "10"
     }
 
-//  add a test that checks the form for the table base
+    // TODO: add a test that checks the form for the table base
 
 }
