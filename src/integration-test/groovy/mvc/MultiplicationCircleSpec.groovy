@@ -19,14 +19,12 @@ class MultiplicationCircleSpec extends GebSpec {
 
         when: "click to bump value up"
         $("#segmentCountUp").click()
-
         then: "the field is bumped up"
         $("form").segmentCount == "11"
 
         when: "click to bump value down"
         $("#segmentCountDown").click()
-
-        then: "the field is bumped up"
+        then: "the field is bumped down"
         $("form").segmentCount == "10"
     }
 
