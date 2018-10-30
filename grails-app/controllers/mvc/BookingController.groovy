@@ -4,6 +4,7 @@ class BookingController {
 
     static scaffold = Booking
 
+    // http://localhost:8080/booking/forDierk
     def forDierk() {
         Person dierk = Person.findByEmail("dierk.koenig@fhnw.ch")
         List<Booking> result = Booking.findAllByBooker(dierk);
@@ -11,10 +12,12 @@ class BookingController {
         render view: "OpenBookingsFor", model: [bookings: result]
     }
 
+    // http://localhost:8080/booking/all.json or http://localhost:8080/booking/all.xml
     def all() {
         respond Booking.list()
     }
 
+    // http://localhost:8080/booking/freeTodayMorning
     def freeTodayMorning() {
 
         // allRooms = find all rooms

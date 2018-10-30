@@ -14,6 +14,10 @@ class Booking {
     final static PM1 = "12:00 - 15:00"
     final static PM2 = "15:00 - 18:00"
 
+    String toString() {
+        return "$booker: $room ($date, $slot)"
+    }
+
     static constraints = {
 		slot inList: [AM, PM1, PM2]
     }

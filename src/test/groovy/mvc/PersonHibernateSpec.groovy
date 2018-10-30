@@ -4,18 +4,13 @@ import grails.test.hibernate.HibernateSpec;
 
 class PersonHibernateSpec extends HibernateSpec {
 
-    @Override
-    List<Class> getDomainClasses() {
-        return [Person]
-    }
-
     void "Insert a new person and delete it"() {
         // Insert
-        when: 'You instantiate a person with name and an email address which has been never used before'
+        setup: 'You instantiate a person with name and an email address which has been never used before'
         def person = new Person(firstName: 'Christian', lastName: 'Ribeaud', email: 'christian.ribeaud@fhnw.ch')
-        then: 'person is valid instance'
+        when: 'person is valid instance'
         person.validate()
-        and: 'we can save it, and we get back a not null GORM Entity'
+        then: 'we can save it, and we get back a not null GORM Entity'
         person.save()
         and: 'there is one additional Person'
         Person.count() == old(Person.count()) + 1
