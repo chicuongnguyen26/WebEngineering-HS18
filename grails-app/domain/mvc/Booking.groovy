@@ -2,7 +2,7 @@ package mvc
 
 import grails.rest.Resource
 
-@Resource
+// @Resource
 class Booking {
 
     Person booker
