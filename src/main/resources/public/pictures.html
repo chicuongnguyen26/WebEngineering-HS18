@@ -11,15 +11,16 @@
         var photoInfos = undefined;
 
         function setPhotoInfos() {
-            // eval("var _resp = " + this.responseText);  // don't do this at home
-            eval("var _resp = " + this.responseText);
+            // eval("var _resp = " + this.responseText); // Don't do this at home
+            console.log(this.responseText);
+            var _resp = JSON.parse(this.responseText);
             photoInfos = _resp.photos.photo;
             nextPhoto();
         }
 
         function nextPhoto() {
             if (undefined == photoInfos) {
-                findInterestingImages()                // mutually recursive
+                findInterestingImages(); // mutually recursive
                 return
             }
             var photo = photoInfos[photoNumber++];
