@@ -2,12 +2,13 @@ package mvc
 
 import grails.rest.Resource
 
-// @Resource
+@Resource(superClass = NonDeleteRestfulController)
 class Person {
 
     String firstName
     String lastName
     String email
+    static hasMany = [bookings: Booking]
 
     String toString() {
         return firstName + " " + lastName

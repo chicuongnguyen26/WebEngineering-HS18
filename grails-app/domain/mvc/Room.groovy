@@ -2,11 +2,11 @@ package mvc
 
 import grails.rest.Resource
 
-// @Resource
+@Resource(superClass = SearchRestfulController)
 class Room {
 
     String name
-    int    max
+    int max
 
     String toString() {
         "$name ($max)"   // Groovy :-)
