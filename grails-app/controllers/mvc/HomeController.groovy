@@ -8,7 +8,7 @@ class HomeController {
 
     SpringSecurityService springSecurityService
 
-    @Secured(['ROLE_USER'])
+    @Secured(Role.USER)
     def index() {
         // respond handles content negotation
         render "Hello '${loggedUsername()}'!"
