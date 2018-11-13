@@ -17,7 +17,6 @@ grails.plugin.springsecurity.authority.className = 'mvc.Role'
 
 final statics = [
         [pattern: '/', access: ['permitAll']],
-        [pattern: '/dbconsole/**', access: ['permitAll']],
         [pattern: '/error', access: ['permitAll']],
         [pattern: '/index', access: ['permitAll']],
         [pattern: '/index.gsp', access: ['permitAll']],
@@ -33,7 +32,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = statics
 
 grails.plugin.springsecurity.filterChain.chainMap = [
         [pattern: '/assets/**', filters: 'none'],
-        [pattern: '/dbconsole/**', filters: 'none'],
         [pattern: '/**/js/**', filters: 'none'],
         [pattern: '/**/css/**', filters: 'none'],
         [pattern: '/**/images/**', filters: 'none'],
