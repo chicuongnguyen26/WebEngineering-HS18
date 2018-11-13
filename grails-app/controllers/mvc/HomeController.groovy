@@ -11,7 +11,7 @@ class HomeController {
     @Secured(Role.USER)
     def index() {
         // respond handles content negotation
-        render "Hello '${loggedUsername()}'!"
+        render "<output>Hello '${loggedUsername()}'!</output>"
         // Following needs "home/index.gson" and "compile 'org.grails.plugins:views-json:1.2.8'"
         // [name: loggedUsername()]
     }
