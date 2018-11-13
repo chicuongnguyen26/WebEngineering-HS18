@@ -17,7 +17,7 @@ class Role implements Serializable {
     String authority
 
     static constraints = {
-        authority nullable: false, blank: false, unique: true
+        authority nullable: false, blank: false, unique: true, inList: [ADMIN, USER]
     }
 
     static mapping = {
